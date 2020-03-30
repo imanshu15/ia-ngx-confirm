@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ia-ngx-confirm": {
@@ -123,6 +123,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "ia-ngx-confirm"
+    },
+    "IaNgxConfirm": {
+      "projectType": "library",
+      "root": "projects/ia-ngx-confirm",
+      "sourceRoot": "projects/ia-ngx-confirm/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ia-ngx-confirm/tsconfig.lib.json",
+            "project": "projects/ia-ngx-confirm/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ia-ngx-confirm/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ia-ngx-confirm/src/test.ts",
+            "tsConfig": "projects/ia-ngx-confirm/tsconfig.spec.json",
+            "karmaConfig": "projects/ia-ngx-confirm/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ia-ngx-confirm/tsconfig.lib.json",
+              "projects/ia-ngx-confirm/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ia-ngx-confirm",
+  "cli": {
+    "analytics": "b9ba9f8c-ffee-4b73-a426-639241e3202b"
+  }
 }

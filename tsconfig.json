@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ia-ngx-confirm": [
+        "dist/ia-ngx-confirm/ia-ngx-confirm",
+        "dist/ia-ngx-confirm"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
